@@ -155,3 +155,62 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
+
+
+.feedback-form-section {
+  max-width: 700px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #2d2d2d;
+}
+
+.form-container p {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form .btn {
+  background-color: #e91e63;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+form .btn:hover {
+  background-color: #d81b60;
+}
