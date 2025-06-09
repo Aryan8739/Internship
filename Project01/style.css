@@ -214,3 +214,27 @@ form .btn {
 form .btn:hover {
   background-color: #d81b60;
 }
+
+
+
+
+
+
+/* Nav Button Style */
+.nav-links .nav-btn {
+  background-color: #e91e63;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-size: 16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.nav-links .nav-btn:hover {
+  background-color: #d81b60;
+  transform: translateY(-2px);
+}
