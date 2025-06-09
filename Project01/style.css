@@ -6,18 +6,45 @@
 }
 
 body {
-  background-color: #f9f9f9;
+  background-color: #f4f4f4;
   color: #333;
 }
 
+/* Carousel */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  max-height: 350px;
+  margin-bottom: 20px;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(0%); }
+  36%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-100%); }
+  69%  { transform: translateX(-200%); }
+  100% { transform: translateX(-200%); }
+}
+
+/* Header */
 header {
   background-color: #222;
   padding: 20px;
   color: white;
-}
-
-header h1 {
-  font-size: 24px;
+  text-align: center;
 }
 
 nav {
@@ -27,10 +54,11 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  margin-right: 20px;
+  margin: 0 15px;
   font-size: 16px;
 }
 
+/* Products */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -48,11 +76,13 @@ nav a {
 }
 
 .product:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .product img {
   max-width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 4px;
 }
 
@@ -68,105 +98,24 @@ nav a {
 
 .price {
   font-weight: bold;
-  margin-bottom: 10px;
   font-size: 18px;
   color: #e91e63;
+  margin-bottom: 10px;
 }
 
 .btn {
   background-color: #e91e63;
   color: white;
   padding: 10px 15px;
-  border: none;
   border-radius: 5px;
-  cursor: pointer;
   text-decoration: none;
+  display: inline-block;
 }
 
+/* Footer */
 footer {
   background-color: #222;
   color: white;
   padding: 20px;
   text-align: center;
-}
-
-@media (max-width: 600px) {
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-}
-
-
-
-
-
-
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  height: 350px;
-  margin: 30px auto 10px;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-/* Hide radios */
-.carousel-wrapper input {
-  display: none;
-}
-
-.carousel {
-  display: flex;
-  width: 300%;
-  height: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-  flex: 1 0 100%;
-  height: 100%;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Slide control */
-#c1:checked ~ .carousel {
-  transform: translateX(0%);
-}
-#c2:checked ~ .carousel {
-  transform: translateX(-100%);
-}
-#c3:checked ~ .carousel {
-  transform: translateX(-200%);
-}
-
-/* Nav dots */
-.carousel-nav {
-  position: absolute;
-  bottom: 15px;
-  width: 100%;
-  text-align: center;
-}
-
-.carousel-nav label {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background-color: #ddd;
-  margin: 0 6px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#c1:checked ~ .carousel-nav label[for="c1"],
-#c2:checked ~ .carousel-nav label[for="c2"],
-#c3:checked ~ .carousel-nav label[for="c3"] {
-  background-color: #e91e63;
 }
