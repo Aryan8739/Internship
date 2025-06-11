@@ -24,7 +24,40 @@
     <h1>Lets Learn about php</h1>
     This is a container...
     <?php
+        $age = 20;
+    if ($age>18){
+        echo "You can go to party";
+    
+    }
+    else {
+        echo "You can not go to party";
+    }
 
+echo "<br>";
+    $lang = array("py","c++","php","node js");  // Array
+    // echo $lang[0];
+    // echo count($lang);
+
+    // Loops in php
+$a = 0;
+    while ($a <= 5) {
+           
+        echo "The Value of a is ";
+        echo $a++;
+        echo "<br>";
+    }
+  // For each
+  foreach($lang as $value){     //Use of as values
+    echo "The value is :";
+    echo $value , "<br>";       // Use of ","
+  } 
+
+//   function 
+function print5(){
+    echo "five";
+
+}
+print5()
 
     ?>
 </div>
