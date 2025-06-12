@@ -96,6 +96,13 @@ if (isset($_POST['user_name'])) {
                 <button type="submit" class="btn">Submit Feedback</button>
             </form>
         </div>
+<div class="nav-buttons">
+                <a href="update.html"><button class="btn">Update Data</button></a>
+                <a href="delete.html"><button class="btn">Delete Data</button></a>
+            </div>
+        </div>
+    </section>
+
     </section>
 
     <!-- Footer -->
