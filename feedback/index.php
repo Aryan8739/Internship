@@ -1,6 +1,5 @@
 <?php
-if (isset($_POST['user_name'])) {
-    // Connection Establishment....
+ // Connection Establishment....
     $server = "localhost";
     $username = "root";
     $password = "";
@@ -14,6 +13,8 @@ if (isset($_POST['user_name'])) {
         // echo "Successfully Connected to DB";
 
     }
+if (isset($_POST['user_name'])) {
+   
     // SQL Query
 
 
@@ -33,7 +34,7 @@ if (isset($_POST['user_name'])) {
         } else {
             echo "ERROR: $sql  <br>  $conn->error";
         }
-        $conn->close();
+       
     }
 }
 ?>
@@ -93,17 +94,29 @@ if (isset($_POST['user_name'])) {
                 <label for="message">Your Feedback</label>
                 <textarea id="message" name="feedback" rows="5" placeholder="Write your feedback here..." required></textarea>
 
-                <button type="submit" class="btn">Submit Feedback</button>
+                <button type="submit" class="btn">Submit Feedback</button> <br>
+                
+                 <a href="update.html"><button class="btn">Update Data</button></a>
+                <a href="delete.html"><button class="btn">Delete Data</button></a>
             </form>
         </div>
-        <div class="nav-buttons">
-                <a href="update.html"><button class="btn">Update Data</button></a>
-                <a href="delete.html"><button class="btn">Delete Data</button></a>
-            </div>
-        </div>
+       
     </section>
 
-    </section>
+<?php
+$sql = "SELECT * FROM feedback";
+$query = mysqli_query($conn, $sql);  
+if (mysqli_num_rows($query) > 0) {
+    while ($row =mysqli_fetch_array($query)) {
+    print_r($row);
+    
+    }
+} else {
+    echo "No records found.";
+}
+ $conn->close();
+?>
+
 
     <!-- Footer -->
     <footer>
