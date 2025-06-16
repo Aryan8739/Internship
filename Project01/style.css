@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* Reset and base styling */
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: #0d1117; /* very dark */
-  color: #c9d1d9; /* light grey */
+  background-color: #0d1117;
+  color: #c9d1d9;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
   display: flex;
@@ -25,17 +25,15 @@ header {
   margin-bottom: 40px;
 }
 
-/* Site name */
 .site-name {
   font-size: 3rem;
   font-weight: 700;
-  color: #58a6ff; /* neon blue */
+  color: #58a6ff;
   letter-spacing: 2px;
   margin-bottom: 20px;
   user-select: none;
 }
 
-/* Navigation bar */
 nav {
   width: 100%;
   max-width: 700px;
@@ -65,7 +63,6 @@ nav {
   background-color: #22272e;
 }
 
-/* Search bar */
 .search-bar {
   position: relative;
   flex-grow: 1;
@@ -124,8 +121,7 @@ nav {
   }
 }
 
-
-/* for carousel */
+/* Carousel Styling */
 .carousel {
   position: relative;
   width: 100%;
@@ -169,7 +165,7 @@ nav {
   color: #58a6ff;
   font-size: 1.5rem;
   font-weight: 600;
-  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 
 .carousel-btn {
@@ -212,3 +208,60 @@ nav {
   }
 }
 
+/* Product Grid */
+.products {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.products h2 {
+  font-size: 2rem;
+  color: #58a6ff;
+  margin-bottom: 25px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.product-card {
+  background-color: #161b22;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(88, 166, 255, 0.3);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  color: #58a6ff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  color: #c9d1d9;
+  font-size: 0.95rem;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #8b949e;
+  font-size: 0.9rem;
+}
