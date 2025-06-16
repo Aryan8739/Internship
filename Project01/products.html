@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Tech | Products</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .products {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .products h2 {
+        font-size: 2.2rem;
+        font-weight: 600;
+        text-align: center;
+        color: #c9d1d9;
+        margin-bottom: 40px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 40px;
+      }
+
+      .product-card {
+        background-color: #0d1117;
+        border: 1px solid #21262d;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        padding: 24px 16px;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .product-card h3 {
+        font-size: 1.3rem;
+        color: #ffffff;
+        margin-bottom: 10px;
+      }
+
+      .product-card p {
+        font-size: 0.95rem;
+        color: #8b949e;
+        margin-bottom: 20px;
+      }
+
+      .product-card .price {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #58a6ff;
+        margin-bottom: 12px;
+      }
+
+      .product-card button {
+        background-color: #58a6ff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .product-card button:hover {
+        background-color: #1f6feb;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-name">Dark Tech</div>
+      <nav>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <form
+          class="search-bar"
+          role="search"
+          onsubmit="event.preventDefault(); alert('Search function coming soon!');"
+        >
+          <input
+            type="search"
+            placeholder="Search products..."
+            aria-label="Search products"
+          />
+          <button type="submit" aria-label="Search">
+            🔍
+          </button>
+        </form>
+      </nav>
+    </header>
+
+    <main>
+      <section class="products">
+        <h2>Explore Our Products</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://www.apple.com/v/watch/br/images/overview/select/product_s10__c724044usymq_large.png" alt="Apple Watch" />
+            <h3>Apple Watch Series 9</h3>
+            <div class="price">$399.00</div>
+            <p>Advanced fitness tracking, heart monitoring & sleek design.</p>
+            <button>View Product</button>
+          </div>
+
+          <div class="product-card">
+            <img src="https://www.assets.signify.com/is/image/Signify/8719514291515-929002468811-Philips-Hue_WCA-9W-A60-E27-3set-EUR-PMO-RTP?wid=500&hei=375" alt="Smart Home Kit" />
+            <h3>Philips Hue Starter Kit</h3>
+            <div class="price">$199.00</div>
+            <p>Voice-controlled smart lights with millions of colors.</p>
+            <button>View Product</button>
+          </div>
+
+          <div class="product-card">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/i/p/p/-original-imah9a3tahjtnyd8.jpeg?q=70" alt="Wireless Earbuds" />
+            <h3>AirPods Pro (2nd Gen)</h3>
+            <div class="price">$249.00</div>
+            <p>Next-level active noise cancellation with spatial audio.</p>
+            <button>View Product</button>
+          </div>
+
+          <div class="product-card">
+            <img src="https://lookaside.fbsbx.com/elementpath/media/?media_id=1572993393316901&version=1747684697&transcode_extension=webp" alt="VR Headset" />
+            <h3>Meta Quest 2</h3>
+            <div class="price">$299.00</div>
+            <p>Wireless VR headset for gaming, fitness, and productivity.</p>
+            <button>View Product</button>
+          </div>
+
+          <div class="product-card">
+            <img src="https://www-cdn.djiits.com/dps/bad1e5a4d479357204ae68f6cca736a3.png" alt="Drone Camera" />
+            <h3>DJI Mavic 3</h3>
+            <div class="price">$2,049.00</div>
+            <p>Professional 4K drone with obstacle avoidance and long flight time.</p>
+            <button>View Product</button>
+          </div>
+
+          <div class="product-card">
+            <img src="https://assets.bosecreative.com/transform/f6b3f275-ba7f-4599-8f7e-1ee5403624eb/SF_pdp_SLHM_gallery_Grey_01?quality=95&io=width:816,height:667,transform:fit&io=width:816,height:667,transform:fit" alt="Bluetooth Speaker" />
+            <h3>Bose SoundLink Flex</h3>
+            <div class="price">$149.00</div>
+            <p>Portable waterproof speaker with deep bass and clear vocals.</p>
+            <button>View Product</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Dark Tech. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
