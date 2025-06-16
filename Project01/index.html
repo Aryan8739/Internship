@@ -1,80 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>
-        E Commerce 
-    </title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dark Tech</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-<div class="carousel-container">
-  <input type="radio" name="slider" id="slide1" checked>
-  <input type="radio" name="slider" id="slide2">
-  <input type="radio" name="slider" id="slide3">
-
-  <div class="carousel">
-    <div class="slides" id="s1">
-      <img src="images/slide1.jpg" alt="Slide 1">
-    </div>
-    <div class="slides" id="s2">
-      <img src="images/slide2.jpg" alt="Slide 2">
-    </div>
-    <div class="slides" id="s3">
-      <img src="images/slide3.jpg" alt="Slide 3">
-    </div>
-  </div>
-
-  <div class="navigation">
-    <label for="slide1"></label>
-    <label for="slide2"></label>
-    <label for="slide3"></label>
-  </div>
-</div>
-    <header>
-    <h1>SmartShop</h1>
+  <header>
+    <div class="site-name">Dark Tech</div>
     <nav>
-        <nav class="nav-links">
-  <a href="#">Home</a>
-  <a href="#">Products</a>
-  <a href="#">Deals</a>
-  <a href="#">Contact</a>
-  <a href="feedback.html">Feedback</a>  <!-- New -->
-</nav>
-        <a href="#">Home</a>
-        <a href="#">Product</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+      <div class="nav-links">
+        <button type="button">Home</button>
+        <button type="button">Products</button>
+        <button type="button">About</button>
+        <button type="button">Contact</button>
+      </div>
+      <form class="search-bar" role="search" onsubmit="event.preventDefault(); alert('Search function coming soon!');">
+        <input type="search" placeholder="Search products..." aria-label="Search products" />
+        <button type="submit" aria-label="Search">
+          🔍
+        </button>
+      </form>
     </nav>
-    </header>
-    <section class="Product">
-<!-- product 1 -->
-        <div class="Product" >
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvCiIvAKe7vn-81OwO-QNczGO60lUHLEqvz8J1bHNnVrxQqPY0L61XDezz0GobZ9yaM4I&usqp=CAU" alt="Product1">
-            <h3>Wireless Headphone</h3>
-            <p>High Quality headphone with 40mm driver and ANC</p>
-            <div class="Price">30000</div>
-            <a href="" class="btn"> Add to cart</a>
-        </div>
-<!-- product2 -->
-        <div class="Product" >
-            <img src="https://x.imastudent.com/content/0064439_sennheiser-momentum-true-wireless-4-earbuds_500.png" alt="Product2">
-            <h3>Wireless Earphone</h3>
-            <p>High Quality Earphone with ANC and 2 day battery</p>
-            <div class="Price">2000</div>
-            <a href="" class="btn"> Add to cart</a>
-        </div>
-<!-- product3 -->
-        <div class="Product" >
-            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQVUOlTfHIW0PLSz4FaSAzQv-oVk35jNoKAd5uEjwExtwcsNS-HlkUXNGOGgR5WT8V36sZcKHgHlZrhkTb78WoxCc_dpkybJRX7Zd2fFQTw44kXIeTYW6A93esFmduVCWLrOv_zUMV6JGc&usqp=CAc" alt="Product3">
-            <h3>Smart Watch</h3>
-            <p>High Quality Smartwatch with calling feature</p>
-            <div class="Price">30000</div>
-            <a href="" class="btn"> Add to cart</a>
-        </div>
-
-    </section>
-
-    <footer>
-        <p>&copy; 2025 SmartShop. All right reserved</p>
-    </footer>
+  </header>
 </body>
+</html>
