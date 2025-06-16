@@ -106,14 +106,40 @@ if (isset($_POST['user_name'])) {
 <?php
 $sql = "SELECT * FROM feedback";
 $query = mysqli_query($conn, $sql);  
-if (mysqli_num_rows($query) > 0) {
-    while ($row =mysqli_fetch_array($query)) {
-    print_r($row);
-    
+if ($query && mysqli_num_rows($query) > 0) {
+    echo "<section class='feedback-display'>";
+    echo "<h2>Previous Feedback</h2>";
+    echo "<table border='1' cellpadding='10' cellspacing='0'>";
+    echo "<tr><th>Name</th><th>Email</th><th>Rating</th><th>Feedback</th><th>Date/Time</th></tr>";
+
+     while ($row = mysqli_fetch_assoc($query)) {
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($row['user_name']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['rating']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['feedback']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['datetime']) . "</td>";
+        
+        // ✅ Add update & delete buttons here
+        echo "<td>
+                <form method='GET' action='update.php' style='display:inline;'>
+                    <input type='hidden' name='sno' value='" . $row['sno'] . "'>
+                    <button type='submit'>Update</button>
+                </form>
+                <form method='POST' action='delete.php' style='display:inline;' onsubmit=\"return confirm('Are you sure you want to delete this feedback?');\">
+                    <input type='hidden' name='sno' value='" . $row['sno'] . "'>
+                    <button type='submit'>Delete</button>
+                </form>
+              </td>";
+        echo "</tr>";
     }
+
+    echo "</table>";
+    echo "</section>";
 } else {
-    echo "No records found.";
+    echo "<p>No records found.</p>";
 }
+
  $conn->close();
 ?>
 
