@@ -1,96 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Tech</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="site-name">Dark Tech</div>
+      <nav>
+        <div class="nav-links" >
+          <button type="button">Home</button>
+          <button type="button">Products</button>
+          <button type="button">About</button>
+          <button type="button">Contact</button>
+        </div>
+        <form
+          class="search-bar"
+          role="search"
+          onsubmit="event.preventDefault(); alert('Search function coming soon!');"
+        >
+          <input
+            type="search"
+            placeholder="Search products..."
+            aria-label="Search products"
+          />
+          <button type="submit" aria-label="Search">
+            🔍
+          </button>
+        </form>
+      </nav>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dark Tech</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <header>
-    <div class="site-name">Dark Tech</div>
-    <nav>
-      <div class="nav-links">
-        <button type="button">Home</button>
-        <button type="button">Products</button>
-        <button type="button">About</button>
-        <button type="button">Contact</button>
+      <div class="carousel">
+        <div class="slides">
+          <div class="slide active">
+            <img src="https://placehold.in/600*50" />
+            <div class="caption">Experience the Future on Your Wrist</div>
+          </div>
+          <div class="slide">
+            <img src="https://placehold.in/600*50"/>
+            <div class="caption">Control Your Home with a Touch</div>
+          </div>
+          <div class="slide">
+            <img src="https://placehold.in/600*50" />
+            <div class="caption">Immersive Sound, Wireless Freedom</div>
+          </div>
+        </div>
+        <button class="carousel-btn prev" aria-label="Previous Slide">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Next Slide">&#10095;</button>
       </div>
-      <form class="search-bar" role="search" onsubmit="event.preventDefault(); alert('Search function coming soon!');">
-        <input type="search" placeholder="Search products..." aria-label="Search products" />
-        <button type="submit" aria-label="Search">
-          🔍
-        </button>
-      </form>
-    </nav>
-    <div class="carousel">
-      <div class="slides">
-        <div class="slide active">
-          <img src="https://via.placeholder.com/1200x400?text=Smart+Watch" alt="Smart Watch" />
-          <div class="caption">Experience the Future on Your Wrist</div>
+    </header>
+
+    <main>
+      <section class="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/300x200?text=Smart+Watch" alt="Smart Watch" />
+            <h3>Smart Watch</h3>
+            <p>Track fitness and stay connected on the go.</p>
+          </div>
+          <div class="product-card">
+            <img src="https://via.placeholder.com/300x200?text=Smart+Home+Kit" alt="Smart Home Kit" />
+            <h3>Smart Home Kit</h3>
+            <p>Automate lights, fans, and security with ease.</p>
+          </div>
+          <div class="product-card">
+            <img src="https://via.placeholder.com/300x200?text=Wireless+Earbuds" alt="Wireless Earbuds" />
+            <h3>Wireless Earbuds</h3>
+            <p>Noise-cancelling comfort with hi-fi sound.</p>
+          </div>
+          <div class="product-card">
+            <img src="https://via.placeholder.com/300x200?text=VR+Headset" alt="VR Headset" />
+            <h3>VR Headset</h3>
+            <p>Dive into a new world of immersive gaming.</p>
+          </div>
         </div>
-        <div class="slide">
-          <img src="https://via.placeholder.com/1200x400?text=Smart+Home" alt="Smart Home" />
-          <div class="caption">Control Your Home with a Touch</div>
-        </div>
-        <div class="slide">
-          <img src="https://via.placeholder.com/1200x400?text=Wireless+Earbuds" alt="Wireless Earbuds" />
-          <div class="caption">Immersive Sound, Wireless Freedom</div>
-        </div>
-      </div>
-      <button class="carousel-btn prev" aria-label="Previous Slide">&#10094;</button>
-      <button class="carousel-btn next" aria-label="Next Slide">&#10095;</button>
-    </div>
-  </header>
+      </section>
+    </main>
 
+    <footer>
+      <p>&copy; 2025 Dark Tech. All rights reserved.</p>
+    </footer>
 
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const prevBtn = document.querySelector(".carousel-btn.prev");
+      const nextBtn = document.querySelector(".carousel-btn.next");
+      let currentIndex = 0;
+      let slideInterval = setInterval(nextSlide, 4000);
 
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+      }
 
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }
 
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      }
 
-  <!-- Script -->
-
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    let currentIndex = 0;
-    let slideInterval = setInterval(nextSlide, 4000);
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        resetInterval();
       });
-    }
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        resetInterval();
+      });
 
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    }
-
-    nextBtn.addEventListener('click', () => {
-      nextSlide();
-      resetInterval();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      prevSlide();
-      resetInterval();
-    });
-
-    function resetInterval() {
-      clearInterval(slideInterval);
-      slideInterval = setInterval(nextSlide, 4000);
-    }
-  </script>
-
-</body>
-
+      function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 4000);
+      }
+    </script>
+  </body>
 </html>
