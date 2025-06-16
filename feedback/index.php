@@ -96,8 +96,7 @@ if (isset($_POST['user_name'])) {
 
                 <button type="submit" class="btn">Submit Feedback</button> <br>
                 
-                 <a href="update.html"><button class="btn">Update Data</button></a>
-                <a href="delete.html"><button class="btn">Delete Data</button></a>
+                
             </form>
         </div>
        
