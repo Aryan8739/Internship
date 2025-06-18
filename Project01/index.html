@@ -1,126 +1,950 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dark Tech</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>
+      Dark Tech - Electronic Gadgets Store <title>TechGear - Electronic Gadgets
+      Store
+    </title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div class="site-name">Dark Tech</div>
-      <nav>
-        <div class="nav-links" >
-          <button type="button">Home</button>
-          <button type="button">Products</button>
-          <button type="button">About</button>
-          <button type="button">Contact</button>
-        </div>
-        <form
-          class="search-bar"
-          role="search"
-          onsubmit="event.preventDefault(); alert('Search function coming soon!');"
-        >
-          <input
-            type="search"
-            placeholder="Search products..."
-            aria-label="Search products"
-          />
-          <button type="submit" aria-label="Search">
-            🔍
-          </button>
-        </form>
-      </nav>
+    <!-- Header -->
+    <header class="header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        Free shipping on orders over $99 • 30-day returns • Extended warranty
+        available
+      </div>
 
-      <div class="carousel">
-        <div class="slides">
-          <div class="slide active">
-            <img src="https://placehold.in/600*50" />
-            <div class="caption">Experience the Future on Your Wrist</div>
+      <!-- Main Header -->
+      <div class="header-main">
+        <div class="container">
+          <div class="header-content">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+              <div class="logo-icon">DT</div>
+              <span class="logo-text">Dark Tech</span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+              <div class="search-box">
+                <svg
+                  class="search-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                <input
+                  type="search"
+                  placeholder="Search for products..."
+                  class="search-input"
+                />
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav-desktop">
+              <a href="products.html" class="nav-link">All Products</a>
+              <a href="#" class="nav-link">Deals</a>
+              <a href="#" class="nav-link">Support</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+              <button class="btn-icon mobile-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+              </button>
+
+              <button class="btn-icon wishlist">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="m12 21-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z"
+                  ></path>
+                </svg>
+              </button>
+
+              <button class="btn-icon account">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </button>
+
+              <button class="btn-icon cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="m6 2 3 6"></path>
+                  <path
+                    d="M17 6H3a1 1 0 0 0-1 1v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1z"
+                  ></path>
+                  <path d="m17 6 3 6"></path>
+                </svg>
+                <span class="cart-badge">3</span>
+              </button>
+
+              <button class="btn-icon mobile-menu" id="mobileMenuBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <line x1="4" x2="20" y1="6" y2="6"></line>
+                  <line x1="4" x2="20" y1="12" y2="12"></line>
+                  <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
           </div>
-          <div class="slide">
-            <img src="https://placehold.in/600*50"/>
-            <div class="caption">Control Your Home with a Touch</div>
-          </div>
-          <div class="slide">
-            <img src="https://placehold.in/600*50" />
-            <div class="caption">Immersive Sound, Wireless Freedom</div>
+
+          <!-- Categories Bar -->
+          <div class="categories-bar">
+            <a href="products.html?category=smartphones" class="category-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                <path d="M12 18h.01"></path>
+              </svg>
+              <span>Smartphones</span>
+            </a>
+            <a href="products.html?category=laptops" class="category-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"
+                ></path>
+              </svg>
+              <span>Laptops</span>
+            </a>
+            <a href="products.html?category=audio" class="category-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 12h4l2-8 4 16 2-8h4"></path>
+              </svg>
+              <span>Audio</span>
+            </a>
+            <a href="products.html?category=wearables" class="category-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="6"></circle>
+                <polyline points="12,10 12,12 13,13"></polyline>
+                <path
+                  d="m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05"
+                ></path>
+                <path
+                  d="m7.88 16.36.8 4.04a2 2 0 0 0 2 1.6h2.72a2 2 0 0 0 2-1.6l.81-4.04"
+                ></path>
+              </svg>
+              <span>Wearables</span>
+            </a>
+            <a href="products.html?category=cameras" class="category-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                ></path>
+                <circle cx="12" cy="13" r="3"></circle>
+              </svg>
+              <span>Cameras</span>
+            </a>
+            <a href="products.html?category=gaming" class="category-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="6" x2="10" y1="12" y2="12"></line>
+                <line x1="8" x2="8" y1="10" y2="14"></line>
+                <line x1="15" x2="15.01" y1="13" y2="13"></line>
+                <line x1="18" x2="18.01" y1="11" y2="11"></line>
+                <rect width="20" height="12" x="2" y="6" rx="2"></rect>
+              </svg>
+              <span>Gaming</span>
+            </a>
           </div>
         </div>
-        <button class="carousel-btn prev" aria-label="Previous Slide">&#10094;</button>
-        <button class="carousel-btn next" aria-label="Next Slide">&#10095;</button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu hidden" id="mobileMenu">
+        <div class="mobile-search">
+          <div class="search-box">
+            <svg
+              class="search-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+            <input type="search" placeholder="Search for products..." />
+          </div>
+        </div>
+        <nav class="mobile-nav">
+          <a href="products.html" class="mobile-nav-link">All Products</a>
+          <a href="#" class="mobile-nav-link">Deals</a>
+          <a href="#" class="mobile-nav-link">Support</a>
+        </nav>
+        <div class="mobile-categories">
+          <h3>Categories</h3>
+          <div class="mobile-categories-grid">
+            <a
+              href="products.html?category=smartphones"
+              class="mobile-category-link"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                <path d="M12 18h.01"></path>
+              </svg>
+              <span>Smartphones</span>
+            </a>
+            <a
+              href="products.html?category=laptops"
+              class="mobile-category-link"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"
+                ></path>
+              </svg>
+              <span>Laptops</span>
+            </a>
+            <a href="products.html?category=audio" class="mobile-category-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 12h4l2-8 4 16 2-8h4"></path>
+              </svg>
+              <span>Audio</span>
+            </a>
+            <a
+              href="products.html?category=wearables"
+              class="mobile-category-link"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="6"></circle>
+                <polyline points="12,10 12,12 13,13"></polyline>
+              </svg>
+              <span>Wearables</span>
+            </a>
+            <a
+              href="products.html?category=cameras"
+              class="mobile-category-link"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                ></path>
+                <circle cx="12" cy="13" r="3"></circle>
+              </svg>
+              <span>Cameras</span>
+            </a>
+            <a
+              href="products.html?category=gaming"
+              class="mobile-category-link"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="6" x2="10" y1="12" y2="12"></line>
+                <line x1="8" x2="8" y1="10" y2="14"></line>
+              </svg>
+              <span>Gaming</span>
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+      <div class="carousel-container">
+        <div class="carousel-wrapper" id="carouselWrapper">
+          <div class="carousel-slide active">
+            <div class="carousel-content">
+              <div class="carousel-bg gradient-carousel-1"></div>
+              <div class="container">
+                <div class="carousel-text">
+                  <h2 class="carousel-title">Black Friday Sale</h2>
+                  <p class="carousel-description">
+                    Up to 50% off on all electronics
+                  </p>
+                  <a href="products.html" class="btn btn-white">Shop Now</a>
+                </div>
+                <div class="carousel-image">
+                  <div class="featured-product">📱</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="carousel-content">
+              <div class="carousel-bg gradient-carousel-2"></div>
+              <div class="container">
+                <div class="carousel-text">
+                  <h2 class="carousel-title">New Gaming Collection</h2>
+                  <p class="carousel-description">
+                    Latest gaming gear now available
+                  </p>
+                  <a href="products.html?category=gaming" class="btn btn-white"
+                    >Explore Gaming</a
+                  >
+                </div>
+                <div class="carousel-image">
+                  <div class="featured-product">🎮</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="carousel-content">
+              <div class="carousel-bg gradient-carousel-3"></div>
+              <div class="container">
+                <div class="carousel-text">
+                  <h2 class="carousel-title">Audio Excellence</h2>
+                  <p class="carousel-description">
+                    Premium headphones & speakers
+                  </p>
+                  <a href="products.html?category=audio" class="btn btn-white"
+                    >Listen Now</a
+                  >
+                </div>
+                <div class="carousel-image">
+                  <div class="featured-product">🎧</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-btn carousel-prev" id="carouselPrev">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="15,18 9,12 15,6"></polyline>
+          </svg>
+        </button>
+
+        <button class="carousel-btn carousel-next" id="carouselNext">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="9,6 15,12 9,18"></polyline>
+          </svg>
+        </button>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators" id="carouselIndicators">
+          <button class="indicator active" data-slide="0"></button>
+          <button class="indicator" data-slide="1"></button>
+          <button class="indicator" data-slide="2"></button>
+        </div>
+      </div>
+    </section>
+
     <main>
-      <section class="products">
-        <h2>Our Products</h2>
-        <div class="product-grid">
-          <div class="product-card">
-            <img src="https://via.placeholder.com/300x200?text=Smart+Watch" alt="Smart Watch" />
-            <h3>Smart Watch</h3>
-            <p>Track fitness and stay connected on the go.</p>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="badge badge-new">
+                <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon
+                    points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                  ></polygon>
+                </svg>
+                New Arrivals Available
+              </div>
+
+              <h1 class="hero-title">
+                Latest <span class="gradient-text">Tech Gear</span><br />
+                At Best Prices
+              </h1>
+
+              <p class="hero-description">
+                Discover cutting-edge electronics, from smartphones to gaming
+                gear. Premium quality, competitive prices, and expert support.
+              </p>
+
+              <div class="hero-buttons">
+                <a href="products.html" class="btn btn-primary">
+                  Shop Now
+                  <svg
+                    class="arrow-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12,5 19,12 12,19"></polyline>
+                  </svg>
+                </a>
+                <button class="btn btn-outline">View Deals</button>
+              </div>
+
+              <!-- Trust Indicators -->
+              <div class="trust-indicators">
+                <div class="trust-item">
+                  <div class="trust-icon trust-icon-green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M5 12V7a7 7 0 1 1 14 0v5"></path>
+                      <rect width="15" height="10" x="4.5" y="12" rx="2"></rect>
+                    </svg>
+                  </div>
+                  <div class="trust-content">
+                    <p class="trust-title">Free Shipping</p>
+                    <p class="trust-subtitle">On orders $99+</p>
+                  </div>
+                </div>
+
+                <div class="trust-item">
+                  <div class="trust-icon trust-icon-blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path
+                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="trust-content">
+                    <p class="trust-title">2-Year Warranty</p>
+                    <p class="trust-subtitle">On all products</p>
+                  </div>
+                </div>
+
+                <div class="trust-item">
+                  <div class="trust-icon trust-icon-green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path
+                        d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"
+                      ></path>
+                      <path d="M21 3v5h-5"></path>
+                      <path
+                        d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"
+                      ></path>
+                      <path d="M8 16H3v5"></path>
+                    </svg>
+                  </div>
+                  <div class="trust-content">
+                    <p class="trust-title">Easy Returns</p>
+                    <p class="trust-subtitle">30-day policy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Featured Product -->
+            <div class="hero-product">
+              <div class="product-showcase">
+                <div class="product-badge">Limited Time • 25% Off</div>
+                <div class="product-image">
+                  <div class="product-visual">📱</div>
+                </div>
+                <h3 class="product-name">iPhone 15 Pro Max</h3>
+                <p class="product-description">
+                  Latest flagship with titanium design
+                </p>
+                <div class="product-price">
+                  <span class="current-price">$899</span>
+                  <span class="original-price">$1,199</span>
+                </div>
+                <div class="product-rating">
+                  <div class="stars">
+                    <svg
+                      class="star filled"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon
+                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                      ></polygon>
+                    </svg>
+                    <svg
+                      class="star filled"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon
+                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                      ></polygon>
+                    </svg>
+                    <svg
+                      class="star filled"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon
+                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                      ></polygon>
+                    </svg>
+                    <svg
+                      class="star filled"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon
+                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                      ></polygon>
+                    </svg>
+                    <svg
+                      class="star filled"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon
+                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                      ></polygon>
+                    </svg>
+                  </div>
+                  <span class="rating-text">(4.8) 2.1k reviews</span>
+                </div>
+                <button class="btn btn-primary product-btn">Add to Cart</button>
+                <div class="product-new-badge">NEW</div>
+              </div>
+            </div>
           </div>
-          <div class="product-card">
-            <img src="https://via.placeholder.com/300x200?text=Smart+Home+Kit" alt="Smart Home Kit" />
-            <h3>Smart Home Kit</h3>
-            <p>Automate lights, fans, and security with ease.</p>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="stat-value">50K+</div>
+              <div class="stat-label">Happy Customers</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                  ></path>
+                  <line x1="3" x2="21" y1="6" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+              </div>
+              <div class="stat-value">200K+</div>
+              <div class="stat-label">Products Sold</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline
+                    points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"
+                  ></polyline>
+                </svg>
+              </div>
+              <div class="stat-value">45K+</div>
+              <div class="stat-label">5-Star Reviews</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                </svg>
+              </div>
+              <div class="stat-value">300%</div>
+              <div class="stat-label">Growth Rate</div>
+            </div>
           </div>
-          <div class="product-card">
-            <img src="https://via.placeholder.com/300x200?text=Wireless+Earbuds" alt="Wireless Earbuds" />
-            <h3>Wireless Earbuds</h3>
-            <p>Noise-cancelling comfort with hi-fi sound.</p>
+        </div>
+      </section>
+
+      <!-- Categories Section -->
+      <section class="categories">
+        <div class="container">
+          <div class="section-header">
+            <div class="badge badge-secondary">Shop by Category</div>
+            <h2 class="section-title">
+              Explore Our <span class="gradient-text">Product Range</span>
+            </h2>
+            <p class="section-description">
+              From cutting-edge smartphones to powerful gaming gear, find the
+              perfect tech for your lifestyle.
+            </p>
           </div>
-          <div class="product-card">
-            <img src="https://via.placeholder.com/300x200?text=VR+Headset" alt="VR Headset" />
-            <h3>VR Headset</h3>
-            <p>Dive into a new world of immersive gaming.</p>
+
+          <div class="categories-grid">
+            <a
+              href="products.html?category=smartphones"
+              class="category-card featured"
+            >
+              <div class="category-bg gradient-smartphones"></div>
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                  <path d="M12 18h.01"></path>
+                </svg>
+              </div>
+              <div class="category-content">
+                <div class="category-info">
+                  <h3 class="category-name">Smartphones</h3>
+                  <p class="category-description">Latest mobile technology</p>
+                  <div class="category-count">245 products</div>
+                </div>
+                <div class="category-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12,5 19,12 12,19"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="category-badge">Featured</div>
+            </a>
+
+            <a href="products.html?category=laptops" class="category-card">
+              <div class="category-bg gradient-laptops"></div>
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"
+                  ></path>
+                </svg>
+              </div>
+              <div class="category-content">
+                <div class="category-info">
+                  <h3 class="category-name">Laptops</h3>
+                  <p class="category-description">Performance computing</p>
+                  <div class="category-count">189 products</div>
+                </div>
+                <div class="category-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12,5 19,12 12,19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="products.html?category=audio" class="category-card">
+              <div class="category-bg gradient-audio"></div>
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path
+                    d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="category-content">
+                <div class="category-info">
+                  <h3 class="category-name">Audio</h3>
+                  <p class="category-description">Premium sound experience</p>
+                  <div class="category-count">156 products</div>
+                </div>
+                <div class="category-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12,5 19,12 12,19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="products.html?category=wearables" class="category-card">
+              <div class="category-bg gradient-wearables"></div>
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <polyline points="12,10 12,12 13,13"></polyline>
+                  <path
+                    d="m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05"
+                  ></path>
+                  <path
+                    d="m7.88 16.36.8 4.04a2 2 0 0 0 2 1.6h2.72a2 2 0 0 0 2-1.6l.81-4.04"
+                  ></path>
+                </svg>
+              </div>
+              <div class="category-content">
+                <div class="category-info">
+                  <h3 class="category-name">Wearables</h3>
+                  <p class="category-description">Smart fitness & health</p>
+                  <div class="category-count">98 products</div>
+                </div>
+                <div class="category-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12,5 19,12 12,19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="products.html?category=cameras" class="category-card">
+              <div class="category-bg gradient-cameras"></div>
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                  ></path>
+                  <circle cx="12" cy="13" r="3"></circle>
+                </svg>
+              </div>
+              <div class="category-content">
+                <div class="category-info">
+                  <h3 class="category-name">Cameras</h3>
+                  <p class="category-description">Professional photography</p>
+                  <div class="category-count">76 products</div>
+                </div>
+                <div class="category-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12,5 19,12 12,19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="products.html?category=gaming" class="category-card">
+              <div class="category-bg gradient-gaming"></div>
+              <div class="category-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <line x1="6" x2="10" y1="12" y2="12"></line>
+                  <line x1="8" x2="8" y1="10" y2="14"></line>
+                  <line x1="15" x2="15.01" y1="13" y2="13"></line>
+                  <line x1="18" x2="18.01" y1="11" y2="11"></line>
+                  <rect width="20" height="12" x="2" y="6" rx="2"></rect>
+                </svg>
+              </div>
+              <div class="category-content">
+                <div class="category-info">
+                  <h3 class="category-name">Gaming</h3>
+                  <p class="category-description">Next-gen entertainment</p>
+                  <div class="category-count">134 products</div>
+                </div>
+                <div class="category-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12,5 19,12 12,19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Products Section -->
+      <section class="featured-products">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-header-content">
+              <div class="badge badge-green">Best Sellers</div>
+              <h2 class="section-title">Featured Products</h2>
+              <p class="section-description">
+                Discover our most popular tech products
+              </p>
+            </div>
+            <a href="products.html" class="btn btn-outline desktop-only">
+              View All Products
+              <svg
+                class="arrow-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12,5 19,12 12,19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded by JavaScript -->
+          </div>
+
+          <div class="mobile-only text-center">
+            <a href="products.html" class="btn btn-outline">
+              View All Products
+              <svg
+                class="arrow-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12,5 19,12 12,19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <section class="newsletter">
+        <div class="newsletter-bg"></div>
+        <div class="container">
+          <div class="newsletter-content">
+            <div class="newsletter-header">
+              <div class="badge badge-newsletter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Exclusive Access
+              </div>
+
+              <h2 class="newsletter-title">
+                Stay Ahead of the
+                <span class="gradient-text-light">Tech Curve</span>
+              </h2>
+
+              <p class="newsletter-description">
+                Get exclusive deals, early access to new products, and tech
+                insights delivered straight to your inbox.
+              </p>
+            </div>
+
+            <div class="newsletter-benefits">
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"></path>
+                    <path d="M2 7h20l-2-4H4l-2 4z"></path>
+                    <path d="M10 12v6"></path>
+                    <path d="M14 12v6"></path>
+                  </svg>
+                </div>
+                <div class="benefit-content">
+                  <p class="benefit-title">Exclusive Discounts</p>
+                  <p class="benefit-subtitle">Up to 40% off</p>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polygon
+                      points="13,2 3,14 12,14 11,22 21,10 12,10"
+                    ></polygon>
+                  </svg>
+                </div>
+                <div class="benefit-content">
+                  <p class="benefit-title">Early Access</p>
+                  <p class="benefit-subtitle">New products first</p>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <polygon
+                      points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                    ></polygon>
+                  </svg>
+                </div>
+                <div class="benefit-content">
+                  <p class="benefit-title">Tech Insights</p>
+                  <p class="benefit-subtitle">Expert reviews</p>
+                </div>
+              </div>
+            </div>
+
+            <form class="newsletter-form" id="newsletterForm">
+              <div class="form-group">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  required
+                  class="newsletter-input"
+                />
+                <button type="submit" class="btn btn-white">
+                  Subscribe Now
+                </button>
+              </div>
+              <p class="newsletter-disclaimer">
+                Join 50,000+ tech enthusiasts. Unsubscribe anytime.
+              </p>
+            </form>
+
+            <div class="newsletter-success hidden" id="newsletterSuccess">
+              <div class="success-content">
+                <div class="success-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <h3 class="success-title">Welcome to Dark Tech!</h3>
+                <p class="success-text">
+                  Thanks for subscribing! Check your email for a special welcome
+                  offer.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 Dark Tech. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+              <div class="logo-icon">DT</div>
+              <span class="logo-text">Dark Tech</span>
+            </a>
+            <p class="footer-description">
+              Your trusted destination for the latest in electronic gadgets and
+              technology. Quality products, competitive prices, and exceptional
+              service.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link">
+                <span>f</span>
+              </a>
+              <a href="#" class="social-link">
+                <span>t</span>
+              </a>
+              <a href="#" class="social-link">
+                <span>i</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-list">
+              <li><a href="products.html">All Products</a></li>
+              <li><a href="#">Deals</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3 class="footer-title">Customer Service</h3>
+            <ul class="footer-list">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Warranty</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            © 2024 Dark Tech. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <script>
-      const slides = document.querySelectorAll(".slide");
-      const prevBtn = document.querySelector(".carousel-btn.prev");
-      const nextBtn = document.querySelector(".carousel-btn.next");
-      let currentIndex = 0;
-      let slideInterval = setInterval(nextSlide, 4000);
-
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === index);
-        });
-      }
-
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-      }
-
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
-      }
-
-      nextBtn.addEventListener("click", () => {
-        nextSlide();
-        resetInterval();
-      });
-
-      prevBtn.addEventListener("click", () => {
-        prevSlide();
-        resetInterval();
-      });
-
-      function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 4000);
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
