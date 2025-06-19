@@ -10,7 +10,7 @@ if (!$conn) {
     die("Connection Failed:" . mysqli_connect_error());
 }
 else {
-    echo "connection Successfull";
+    // echo "connection Successfull";
 }
 
 
