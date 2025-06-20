@@ -16,9 +16,9 @@
     <aside class="admin-sidebar">
       <h2 class="admin-logo">DARK TECH</h2>
       <nav>
-        <a href="#" class="active">Dashboard</a>
-        <a href="#">Manage Carousel</a>
-        <a href="#">Manage Products</a>
+        <a href="#" class="active">Dashboard</a> <br> <br>
+        <a href="#">Manage NavBar</a> <br> <br>
+        <a href="#">Manage Products</a> <br> <br>
         <a href="#">Logout</a>
       </nav>
     </aside>
@@ -26,7 +26,7 @@
     <!-- Main Content -->
     <main class="admin-main">
       <header class="admin-header">
-        <h1>Admin Dashboard</h1>
+        <h1>Admin Dashboard </h1>
       </header>
       <section class="admin-content">
         <p>Welcome, Admin! Choose an action from the sidebar.</p>
