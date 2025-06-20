@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   color: #333;
 }
 
@@ -14,7 +14,7 @@ body {
 .admin-sidebar {
   width: 220px;
   background-color: #111;
-  color: #fff;
+  color: #00ffff;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ body {
 
 .admin-sidebar nav a:hover,
 .admin-sidebar nav a.active {
-  background-color: #333;
+  background-color: #ff0080;
   color: #fff;
 }
 
