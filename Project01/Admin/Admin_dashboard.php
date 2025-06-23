@@ -18,7 +18,7 @@
       <nav>
         <a href="#" class="active">Dashboard</a> <br> <br>
         <a href="#">Manage NavBar</a> <br> <br>
-        <a href="#">Manage Products</a> <br> <br>
+        <a href="/Project01/product/edit_product.php">Manage Products</a> <br> <br>
         <a href="#">Logout</a>
       </nav>
     </aside>
