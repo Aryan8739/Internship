@@ -16,10 +16,14 @@
     <aside class="admin-sidebar">
       <h2 class="admin-logo">DARK TECH</h2>
       <nav>
-        <a href="#" class="active">Dashboard</a> <br> <br>
+        <a href="Admin_dashboard.php" class="active">Dashboard</a> <br> <br>
         <a href="#">Manage NavBar</a> <br> <br>
-        <a href="/Project01/product/edit_product.php">Manage Products</a> <br> <br>
-        <a href="#">Logout</a>
+        <a href="admin_product.php">Manage Products</a> <br> <br>
+        <a href="/Internship/Project01/login.php ">Logout</a>
+        
+ 
+
+
       </nav>
     </aside>
 
