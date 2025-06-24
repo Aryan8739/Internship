@@ -1,5 +1,5 @@
 <?php
-include 'conn.php';
+include '../conn.php';
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ include 'conn.php';
 <body>
     <h1 style="text-align:center">Admin Login</h1>
     <br>
-    <form action="/Internship/Project01/Admin/Admin_dashboard.php" method="post">
+    <form action="/Internship/Project01/Admin/Admin_data.php" method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br>
