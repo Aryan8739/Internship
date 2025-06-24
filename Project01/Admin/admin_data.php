@@ -1,7 +1,7 @@
 <?php
-include_once 'conn.php';
+include_once '../conn.php';
 
-//  Tkaking input from form
+//  Taking input from form
 if ($_SERVER['REQUEST_METHOD']== 'POST'){
     $user_name = $_POST["username"] ?? '';
     $pass =$_POST["password"] ?? '';
@@ -16,14 +16,14 @@ if ($_SERVER['REQUEST_METHOD']== 'POST'){
     // checking for username and password
     if (mysqli_num_rows($result)){
 
-        header('Location: Admin_dashboard.html');
+        header('Location: Admin_dashboard.php');
         exit();
     
     }
     else {
         echo "<script>
     alert('Invalid Username or Password');
-    window.location.href = 'login.php';
+    window.location.href = '/Internship/Project01/login.php';
 </script>";
 
         
