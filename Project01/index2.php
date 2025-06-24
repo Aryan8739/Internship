@@ -14,13 +14,29 @@
     <div class="container">
       <h1>Dark Tech</h1>
       <nav>
+        <!-- Search Bar -->
+            <div class="search-container">
+              <div class="search-box">
+                
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                <input
+                  type="search"
+                  placeholder="Search for products..."
+                  class="search-input"
+                />
+              </div>
+            </div>
+
         <a href="index.php">Home</a>
         <a href="products.php">Products</a>
         <a href="login.php">Login</a>
       </nav>
     </div>
   </header>
-
+  
+    
 <section class="carousel-section">
   <div class="carousel-container">
     <div class="carousel-wrapper" id="carouselWrapper">
@@ -109,6 +125,30 @@
     </div>
   </div>
 </section>
+
+<!-- Featured Products -->
+<section class="products">
+  <div class="container">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <?php
+      $sql = "SELECT * FROM products  LIMIT 4";
+      $result = $conn->query($sql);
+
+      if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          echo '<div class="product-card">
+                  <img src="' . $row["image_url"] . '" alt="' . $row["name"] . '">
+                  <h3>' . $row["name"] . '</h3>
+                  <p>$' . $row["price"] . '</p>
+                  <a href="product.php?id=' . $row["id"] . '" class="btn">View</a>
+                </div>';
+        }
+      } else {
+        echo '<p>No featured products available.</p>';
+      }
+      ?>
+    </div>
   <!-- Footer -->
   <footer>
     <div class="container">
