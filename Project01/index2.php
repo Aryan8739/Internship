@@ -5,34 +5,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dark Tech - Home</title>
-  <link rel="stylesheet" href="styles2.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Dark Tech</h1>
-      <nav>
-        <!-- Search Bar -->
-            <div class="search-container">
-              <div class="search-box">
-                
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="m21 21-4.3-4.3"></path>
-                </svg>
-                <input
-                  type="search"
-                  placeholder="Search for products..."
-                  class="search-input"
-                />
-              </div>
-            </div>
-
-        <a href="index.php">Home</a>
-        <a href="products.php">Products</a>
-        <a href="login.php">Login</a>
-      </nav>
+   <!-- Header -->
+  <header class="header">
+    <div class="top-bar">Free shipping on orders over ₹999 • 30-day returns • Warranty included</div>
+    <div class="header-main">
+      <div class="container">
+        <div class="header-content">
+          <a href="index2.php" class="logo">
+            <div class="logo-icon">DT</div>
+            <span class="logo-text">Dark Tech</span>
+          </a>
+          <nav class="nav-desktop">
+            <a href="index2.php" class="nav-link ">Home</a>
+            <a href="products2.php" class="nav-link active">Products</a>
+            <a href="#" class="nav-link">Deals</a>
+            <a href="#" class="nav-link">Support</a>
+          </nav>
+        </div>
+      </div>
     </div>
   </header>
   
@@ -155,6 +149,9 @@
       <p>&copy; 2024 Dark Tech. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="script.js"></script>
+
 
 </body>
 </html>
