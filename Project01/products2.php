@@ -1,0 +1,70 @@
+<?php include 'conn.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Products - Dark Tech</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top-bar">Free shipping on orders over ₹999 • 30-day returns • Warranty included</div>
+    <div class="header-main">
+      <div class="container">
+        <div class="header-content">
+          <a href="index2.php" class="logo">
+            <div class="logo-icon">DT</div>
+            <span class="logo-text">Dark Tech</span>
+          </a>
+          <nav class="nav-desktop">
+            <a href="index2.php" class="nav-link ">Home</a>
+            <a href="product2.php" class="nav-link active">Products</a>
+            <a href="#" class="nav-link">Deals</a>
+            <a href="#" class="nav-link">Support</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Products Section -->
+  <main class="products-page">
+    <div class="container">
+      <h1 class="page-title">All Products</h1>
+      <div class="products-grid">
+        <?php
+          $query = "SELECT * FROM ProductData";
+          $result = mysqli_query($conn, $query);
+
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo '
+                <div class="product-card">
+                  <img src="' . htmlspecialchars($row['image_url']) . '" alt="' . htmlspecialchars($row['name']) . '" class="product-image"/>
+                  <h2 class="product-name">' . htmlspecialchars($row['name']) . '</h2>
+                  <p class="product-desc">' . htmlspecialchars($row['description']) . '</p>
+                  <p class="product-price">₹' . htmlspecialchars($row['price']) . '</p>
+                  <button class="btn btn-primary">Buy Now</button>
+                </div>
+              ';
+            }
+          } else {
+            echo "<p>No products found.</p>";
+          }
+        ?>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index2.php" class="footer-logo">
+            <div class="logo-icon">DT</div>
+            <span class="logo-text">Dark Tech</span>
+          </a>
+          <p class="footer-description">Your trusted hub for the
