@@ -17,9 +17,9 @@
       <h2 class="admin-logo">DARK TECH</h2>
       <nav>
         <a href="Admin_dashboard.php" class="active">Dashboard</a> <br> <br>
-        <a href="#">Manage NavBar</a> <br> <br>
+        <a href="caraousel.php">Manage Caraousel</a> <br> <br>
         <a href="admin_product.php">Manage Products</a> <br> <br>
-        <a href="/Internship/Project01/login.php ">Logout</a>
+        <a href="/Internship/Project01/index2.php ">Logout</a>
         
  
 
