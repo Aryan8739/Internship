@@ -21,7 +21,7 @@
           <nav class="nav-desktop">
             <a href="index2.php" class="nav-link ">Home</a>
             <a href="product2.php" class="nav-link active">Products</a>
-            <a href="#" class="nav-link">Deals</a>
+            <a href="login.php" class="nav-link">Login</a>
             <a href="#" class="nav-link">Support</a>
           </nav>
         </div>
@@ -35,7 +35,7 @@
       <h1 class="page-title">All Products</h1>
       <div class="products-grid">
         <?php
-          $query = "SELECT * FROM ProductData";
+          $query = "SELECT * FROM products ORDER BY id DESC";
           $result = mysqli_query($conn, $query);
 
           if (mysqli_num_rows($result) > 0) {
