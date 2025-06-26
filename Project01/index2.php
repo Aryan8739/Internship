@@ -20,9 +20,9 @@
             <span class="logo-text">Dark Tech</span>
           </a>
           <nav class="nav-desktop">
-            <a href="index2.php" class="nav-link ">Home</a>
-            <a href="products2.php" class="nav-link active">Products</a>
-            <a href="#" class="nav-link">Deals</a>
+            <a href="index2.php" class="nav-link active ">Home</a>
+            <a href="products2.php" class="nav-link ">Products</a>
+            <a href="login.php" class="nav-link">Login</a>
             <a href="#" class="nav-link">Support</a>
           </nav>
         </div>
@@ -31,73 +31,30 @@
   </header>
   
     
-<section class="carousel-section">
-  <div class="carousel-container">
-    <div class="carousel-wrapper" id="carouselWrapper">
-      <!-- Slide 1 -->
-      <div class="carousel-slide active">
-        <div class="carousel-content">
-          <div class="carousel-bg gradient-carousel-1"></div>
-          <div class="container">
-            <div class="carousel-text">
-              <h2 class="carousel-title">Black Friday Sale</h2>
-              <p class="carousel-description">Up to 50% off on all electronics</p>
-              <a href="products.html" class="btn btn-white">Shop Now</a>
-            </div>
-            <div class="carousel-image">
-              <img
-                src="https://placehold.in/600x300?text=Black+Friday+Sale"
-                alt="Black Friday Sale Banner"
-                style="max-width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,0.3);"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- Carousel Start -->
+<div class="carousel">
+  <?php
+    $carouselQuery = "SELECT * FROM CarouselData WHERE is_active = 1";
+    $carouselResult = mysqli_query($conn, $carouselQuery);
 
-      <!-- Slide 2 -->
-      <div class="carousel-slide">
-        <div class="carousel-content">
-          <div class="carousel-bg gradient-carousel-2"></div>
-          <div class="container">
-            <div class="carousel-text">
-              <h2 class="carousel-title">New Gaming Collection</h2>
-              <p class="carousel-description">Latest gaming gear now available</p>
-              <a href="products.html?category=gaming" class="btn btn-white">Explore Gaming</a>
-            </div>
-            <div class="carousel-image">
-              <img
-                src="https://placehold.in/600x300?text=Gaming+Gear"
-                alt="Gaming Gear Banner"
-                style="max-width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,0.3);"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-slide">
-        <div class="carousel-content">
-          <div class="carousel-bg gradient-carousel-3"></div>
-          <div class="container">
-            <div class="carousel-text">
-              <h2 class="carousel-title">Audio Excellence</h2>
-              <p class="carousel-description">Premium headphones & speakers</p>
-              <a href="products.html?category=audio" class="btn btn-white">Listen Now</a>
-            </div>
-            <div class="carousel-image">
-              <img
-                src="https://placehold.in/600x300?text=Audio+Products"
-                alt="Audio Products Banner"
-                style="max-width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,0.3);"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    if (mysqli_num_rows($carouselResult) > 0) {
+      $index = 0;
+      echo '<div class="carousel-inner">';
+      while ($row = mysqli_fetch_assoc($carouselResult)) {
+        $activeClass = ($index === 0) ? 'active' : '';
+        echo '
+          <div class="carousel-item ' . $activeClass . '">
+            <img src="' . htmlspecialchars($row['image_url']) . '" alt="Slide ' . ($index + 1) . '" />
+            <div class="carousel-caption">' . htmlspecialchars($row['caption']) . '</div>
+          </div>';
+        $index++;
+      }
+      echo '</div>';
+    } else {
+      echo '<p>No slides found.</p>';
+    }
+  ?>
+  
     <!-- Carousel Controls -->
     <button class="carousel-btn carousel-prev" id="carouselPrev">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -119,6 +76,10 @@
     </div>
   </div>
 </section>
+</div>
+<!-- Carousel End -->
+
+
 
 <!-- Featured Products -->
 <section class="products">
@@ -150,7 +111,27 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- <script src="script.js"></script> -->
+
+
+  <script>
+  const carousel = document.getElementById('homeCarousel');
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  let index = 0;
+
+  function showSlide(i) {
+    carousel.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  if (slides.length > 1) {
+    setInterval(nextSlide, 4000); // change every 4 sec
+  }
+</script>
 
 
 </body>
