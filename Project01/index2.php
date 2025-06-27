@@ -11,7 +11,7 @@
 
    <!-- Header -->
   <header class="header">
-    <div class="top-bar">Free shipping on orders over ₹999 • 30-day returns • Warranty included</div>
+    <div class="top-bar">Free shipping on orders over ₹999 • 30-day returns • Warranty included   <?php echo htmlspecialchars($user['name']); ?></div>
     <div class="header-main">
       <div class="container">
         <div class="header-content">
@@ -24,6 +24,22 @@
             <a href="products2.php" class="nav-link ">Products</a>
             <a href="../Project01/User/login_land.html" class="nav-link">Login</a>
             <a href="login.php" class="nav-link">Admin</a>
+            <a href ="#" class = 'nav-link'> <?php
+              session_start();
+              if (isset($_SESSION['user'])) {
+                echo "Welcome, " . htmlspecialchars($_SESSION['user']['name']);
+                
+              } else {
+                echo "Guest";
+              } 
+              ?></a>
+            <a href ="#" class = 'nav-link'> 
+              <?php
+              if (isset($_SESSION['user'])) {
+                echo '<a href="../Project01/User/user_logout.php" class="nav-link">Logout</a>';
+              }
+              ?>
+              
           </nav>
         </div>
       </div>
