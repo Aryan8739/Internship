@@ -11,7 +11,7 @@
 
    <!-- Header -->
   <header class="header">
-    <div class="top-bar">Free shipping on orders over ₹999 • 30-day returns • Warranty included   <?php echo htmlspecialchars($user['name']); ?></div>
+    <div class="top-bar">Free shipping on orders over ₹999 • 30-day returns • Warranty included   </div>
     <div class="header-main">
       <div class="container">
         <div class="header-content">
