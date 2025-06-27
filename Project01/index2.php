@@ -22,8 +22,8 @@
           <nav class="nav-desktop">
             <a href="index2.php" class="nav-link active ">Home</a>
             <a href="products2.php" class="nav-link ">Products</a>
-            <a href="login.php" class="nav-link">Login</a>
-            <a href="#" class="nav-link">Support</a>
+            <a href="../Project01/User/login_land.html" class="nav-link">Login</a>
+            <a href="login.php" class="nav-link">Admin</a>
           </nav>
         </div>
       </div>
