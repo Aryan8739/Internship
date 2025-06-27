@@ -13,7 +13,10 @@ if ($_SERVER["REQUEST_METHOD"]== 'POST'){
     $user = $res->fetch_assoc();
 
     if ($user && password_verify($pass, $user['password'])) {
-        $_SESSION['user'] = $user;
+        $_SESSION['user'] = $user; //->name;
+
+    
+        
         header("Location: ../index2.php");
         exit;
     } else {
