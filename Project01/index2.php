@@ -97,35 +97,37 @@
 
 
 
-<!-- Featured Products -->
-<section class="products">
-  <div class="container">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-      <?php
-      $sql = "SELECT * FROM products  LIMIT 4";
-      $result = $conn->query($sql);
+<?php
+// --- index2.php ---
+include 'conn.php';
+session_start();
 
-      if ($result && $result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-          echo '<div class="product-card">
-                  <img src="' . $row["image_url"] . '" alt="' . $row["name"] . '">
-                  <h3>' . $row["name"] . '</h3>
-                  <p>$' . $row["price"] . '</p>
-                  <a href="product.php?id=' . $row["id"] . '" class="btn">View</a>
-                </div>';
-        }
-      } else {
-        echo '<p>No featured products available.</p>';
-      }
-      ?>
-    </div>
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Dark Tech. All rights reserved.</p>
-    </div>
-  </footer>
+$sql = "SELECT * FROM products";
+$res = $conn->query($sql);
+
+while ($product = $res->fetch_assoc()) {
+?>
+  <div class="product-card">
+    <img src="<?= $product['image_url'] ?>" alt="Product Image">
+    <h3><?= $product['caption'] ?></h3>
+    <p>Price: ₹<?= $product['price'] ?></p>
+
+    <form method="POST" action="cart.php" style="display:inline;">
+        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+        <input type="hidden" name="action" value="add">
+        <button type="submit">Add to Cart</button>
+    </form>
+
+    <form method="POST" action="checkout.php" style="display:inline;">
+        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+        <input type="hidden" name="action" value="buy_now">
+        <button type="submit">Buy Now</button>
+    </form>
+  </div>
+<?php
+}
+?>
+
 
   <!-- <script src="script.js"></script> -->
 
