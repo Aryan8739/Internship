@@ -28,20 +28,26 @@ if ($_SERVER["REQUEST_METHOD"]== 'POST'){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="user.css" />
 </head>
 <body>
 
-<form method="POST">
-  <input name="email" required type="email" placeholder="Email"><br>
-  <input name="password" required type="password" placeholder="Password"><br>
-  <button type="submit">Login</button>
-</form>
-    
+  <div class="auth-container">
+    <h2 class="auth-title">Welcome Back</h2>
+    <form method="POST" action="">
+      <input type="text" name="email" class="auth-input" placeholder="email" required />
+      <input type="password" name="password" class="auth-input" placeholder="Password" required />
+      <button type="submit" class="auth-btn">Login</button>
+    </form>
+    <a href="user_registration.php" class="auth-link">Don't have an account? Register</a>
+  </div>
+
 </body>
 </html>
+
 
 
 
