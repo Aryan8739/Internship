@@ -1,15 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration or Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome</title>
+  <link rel="stylesheet" href="../css/auth.css" />
+  <style>
+    body {
+      background: var(--dark-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .welcome-box {
+      background: var(--dark-surface);
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .welcome-title {
+      font-size: 2rem;
+      color: var(--neon-blue);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .auth-btn {
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    .prompt {
+      color: var(--gray-500);
+      font-size: 1rem;
+      margin: 1rem 0 0.5rem;
+    }
+    .auth-input:focus {
+  outline: none;
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.auth-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+  color: rgb(0, 0, 0);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.2);
+}
+
+.auth-btn:hover {
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.5);
+}
+
+.auth-link {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.auth-link:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 5px rgba(255, 0, 128, 0.4);
+}
+  </style>
 </head>
 <body>
-    <h1 > Welcome User</h1>
-    New User?
-    <button onclick="location.href='user_registration.php '"> Register </button><br>
-    Already have an account?
-    <button onclick="location.href='user_login.php'"> Login </button>
+
+  <div class="welcome-box">
+    <h1 class="welcome-title">Welcome, User</h1>
+
+    <p class="prompt">New User?</p>
+    <button onclick="location.href='user_registration.php'" class="auth-btn">Register</button>
+
+    <p class="prompt">Already have an account?</p>
+    <button onclick="location.href='user_login.php'" class="auth-btn">Login</button>
+  </div>
+
 </body>
 </html>
