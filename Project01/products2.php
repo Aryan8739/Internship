@@ -19,10 +19,27 @@
             <span class="logo-text">Dark Tech</span>
           </a>
           <nav class="nav-desktop">
-            <a href="index2.php" class="nav-link ">Home</a>
-            <a href="product2.php" class="nav-link active">Products</a>
-            <a href="login.php" class="nav-link">Login</a>
-            <a href="#" class="nav-link">Support</a>
+            <a href="index2.php" class="nav-link  ">Home</a>
+            <a href="products2.php" class="nav-link ">Products</a>
+            <a href="../Project01/User/login_land.html" class="nav-link">Login</a>
+            <a href="login.php" class="nav-link">Admin</a>
+            <a href ="#" class = 'nav-link'> <?php
+              session_start();
+              if (isset($_SESSION['user'])) {
+                echo "Welcome, " . htmlspecialchars($_SESSION['user']['name']);
+                
+              } else {
+                echo "Guest";
+              } 
+              ?></a>
+              <a href="cart.php" class="nav-link">Cart</a>
+            <a href ="#" class = 'nav-link'> 
+              <?php
+              if (isset($_SESSION['user'])) {
+                echo '<a href="../Project01/User/user_logout.php" class="nav-link">Logout</a>';
+              }
+              ?>
+              
           </nav>
         </div>
       </div>
