@@ -1,3 +1,35 @@
+<?php
+session_start();
+include 'conn.php';
+
+// Initialize cart if not set
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+
+// Handle "Add to Cart"
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add') {
+    $product_id = (int)$_POST['product_id'];
+
+    // Check if product exists in DB
+    $res = $conn->query("SELECT * FROM products WHERE id = $product_id");
+    if ($row = $res->fetch_assoc()) {
+        // Add or update quantity
+        if (isset($_SESSION['cart'][$product_id])) {
+            $_SESSION['cart'][$product_id]['quantity'] += 1;
+        } else {
+            $_SESSION['cart'][$product_id] = [
+                'name' => $row['name'],
+                'price' => $row['price'],
+                'quantity' => 1
+            ];
+        }
+        $message = "Added to cart!";
+    }
+}
+?>
+
+
 <?php include 'conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,16 +145,16 @@ while ($product = $res->fetch_assoc()) {
     <h3><?= $product['caption'] ?></h3>
     <p>Price: ₹<?= $product['price'] ?></p>
 
-    <form method="POST" action="#" style="display:inline;">
+    <form method="POST" action="" style="display:inline;">
         <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
         <input type="hidden" name="action" value="add">
-        <button type="submit">Add to Cart</button>
+        <button class="btn btn-primary" type="submit">Add to Cart</button>
     </form>
 
     <form method="POST" action="checkout.php" style="display:inline;">
         <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
         <input type="hidden" name="action" value="buy_now">
-        <button type="submit">Buy Now</button>
+        <button class="btn btn-primary" type="submit">Buy Now</button>
     </form>
   </div>
 <?php
