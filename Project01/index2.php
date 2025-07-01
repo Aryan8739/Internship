@@ -33,6 +33,7 @@
                 echo "Guest";
               } 
               ?></a>
+              <a href="cart.php" class="nav-link">Cart</a>
             <a href ="#" class = 'nav-link'> 
               <?php
               if (isset($_SESSION['user'])) {
@@ -112,7 +113,7 @@ while ($product = $res->fetch_assoc()) {
     <h3><?= $product['caption'] ?></h3>
     <p>Price: ₹<?= $product['price'] ?></p>
 
-    <form method="POST" action="cart.php" style="display:inline;">
+    <form method="POST" action="#" style="display:inline;">
         <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
         <input type="hidden" name="action" value="add">
         <button type="submit">Add to Cart</button>
