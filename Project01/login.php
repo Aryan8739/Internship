@@ -8,57 +8,49 @@ include '../conn.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login Page</title>
+    <link rel="stylesheet" href="styles.css"
     
 
-    <style> 
-          body {
-            text-size-adjust: 200;
-                color:rgb(255, 255, 255);
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                background-color:rgb(34, 33, 33);
-                font-family: Arial, sans-serif;
-          }        
-        
-        h1 {
-            align-content: center;
-            color: #ff0080
-        }
-        form {
-            align-self: center;
-            background-color:rgb(21, 51, 74);
-            padding: 100px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-            margin-right: 10px;;
-        }
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 13px;
-            margin-bottom: 10px;
-            border-radius: 50px;
-            border: 1px solid #ccc;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #00ffff;
-            color: black;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-    </style>
+
 </head>
 <body>
+    <!-- Header -->
+  <header class="header">
+    <div class="top-bar">Free shipping on orders over ₹999 • 30-day returns • Warranty included   </div>
+    <div class="header-main">
+      <div class="container">
+        <div class="header-content">
+          <a href="index2.php" class="logo">
+            <div class="logo-icon">DT</div>
+            <span class="logo-text">Dark Tech</span>
+          </a>
+          <nav class="nav-desktop">
+            <a href="index2.php" class="nav-link  ">Home</a>
+            <a href="products2.php" class="nav-link ">Products</a>
+            <a href="../Project01/User/login_land.html" class="nav-link">Login</a>
+            <a href="login.php" class="nav-link active">Admin</a>
+            <a href ="#" class = 'nav-link'> <?php
+              session_start();
+              if (isset($_SESSION['user'])) {
+                echo "Welcome, " . htmlspecialchars($_SESSION['user']['name']);
+                
+              } else {
+                echo "Guest";
+              } 
+              ?></a>
+              <a href="cart.php" class="nav-link">Cart</a>
+            <a href ="#" class = 'nav-link'> 
+              <?php
+              if (isset($_SESSION['user'])) {
+                echo '<a href="../Project01/User/user_logout.php" class="nav-link">Logout</a>';
+              }
+              ?>
+              
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
     <h1 style="text-align:center">Admin Login</h1>
     <br>
     <form action="/Internship/Project01/Admin/Admin_data.php" method="post">
