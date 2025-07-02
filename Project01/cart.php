@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <nav class="nav-desktop">
             <a href="index2.php" class="nav-link ">Home</a>
             <a href="products2.php" class="nav-link ">Products</a>
-            <a href="../Project01/User/login_land.html" class="nav-link">Login</a>
+            <a href="../Project01/User/login_land.php" class="nav-link">Login</a>
             <a href="login.php" class="nav-link">Admin</a>
             <a href ="#" class = 'nav-link'> <?php
               session_start();

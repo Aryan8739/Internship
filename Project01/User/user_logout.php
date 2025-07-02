@@ -1,9 +1,10 @@
 <?php
 
 session_start();
-
-session_unset(); // Unset all session variables
-session_destroy(); // Destroy the session   
+unset($_SESSION['user_id']);
+unset($_SESSION['user_name']);
+header("Location: ../main/index2.php");
+exit;
 
 
 ?>
@@ -30,7 +31,7 @@ session_destroy(); // Destroy the session
           <nav class="nav-desktop">
             <a href="../index2.php" class="nav-link ">Home</a>
             <a href="../products2.php" class="nav-link ">Products</a>
-            <a href="../Project01/User/login_land.html" class="nav-link">Login</a>
+            <a href="../Project01/User/login_land.php" class="nav-link">Login</a>
             <a href="../login.php" class="nav-link">Admin</a>
             <a href ="#" class = 'nav-link'> <?php
               session_start();
@@ -57,7 +58,7 @@ session_destroy(); // Destroy the session
   <div class="auth-container">
     <h2 >Logged Out</h2>
     <p class="logout-message">You have been successfully logged out.</p>
-    <a href="user_login.php" class="auth-btn">Login Again</a>
+    <a href="user_fixed_login.php" class="auth-btn">Login Again</a>
   </div>
 
 </body>
