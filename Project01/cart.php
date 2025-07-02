@@ -35,6 +35,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <title>Your Cart</title>
 <link rel="stylesheet" href="styles.css" >
+<style>
+  .desktop {
+    font-size: x-large;
+    text-align:center;
+  }
+</style>
 </head>
 <body>
        <!-- Header -->
@@ -76,6 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </header>
 
 <h2>Your Cart</h2>
+ <div >
+    <nav class="desktop">
+            <a href="User/user_order.php" class="nav-link  ">ORDER HISTORY</a>
+    </nav>      
+    </div> 
 
 <?php if (empty($_SESSION['cart'])): ?>
     <p>Your cart is empty.</p>
@@ -120,6 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" action="checkout.php">
         <button type="submit" class="checkout-btn">Proceed to Checkout</button>
     </form>
+   
 <?php endif; ?>
 
 <!-- Optional: JavaScript for live total update -->
@@ -134,6 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     });
 
     document.getElementById('total').textContent = total;
+  
 </script>
 
 </body>
