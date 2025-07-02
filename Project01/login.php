@@ -1,5 +1,16 @@
 <?php
 include '../conn.php';
+session_start();
+// Clean any old user session if switching to admin
+unset($_SESSION['user_id']);
+unset($_SESSION['user_name']);
+
+$_SESSION['admin_id'] = $admin['id'];
+$_SESSION['admin_name'] = $admin['username'];
+$_SESSION['is_admin'] = true;
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +38,7 @@ include '../conn.php';
           <nav class="nav-desktop">
             <a href="index2.php" class="nav-link  ">Home</a>
             <a href="products2.php" class="nav-link ">Products</a>
-            <a href="../Project01/User/login_land.html" class="nav-link">Login</a>
+            <a href="../Project01/User/login_land.php" class="nav-link">Login</a>
             <a href="login.php" class="nav-link active">Admin</a>
             <a href ="#" class = 'nav-link'> <?php
               session_start();

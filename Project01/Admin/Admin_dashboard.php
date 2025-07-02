@@ -1,5 +1,14 @@
 <?php
-// You can add session checks here later
+session_start();
+ 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
+    echo "Access denied. Admin only.";
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +28,18 @@
         <a href="Admin_dashboard.php" class="active">Dashboard</a> <br> <br>
         <a href="caraousel.php">Manage Caraousel</a> <br> <br>
         <a href="admin_product.php">Manage Products</a> <br> <br>
+        <a href="#"> 
+          <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (isset($_SESSION['is_admin']) && !empty($_SESSION['admin_name'])) {
+    echo "Admin: " . htmlspecialchars($_SESSION['admin_name']);
+} else {
+    echo "Access denied or invalid ";
+}
+?></a> <br> <br>
         <a href="/Internship/Project01/index2.php ">Logout</a>
         
  
