@@ -1,9 +1,7 @@
 <?php
 include '../conn.php';
 session_start();
-// Clean any old user session if switching to admin
-unset($_SESSION['user_id']);
-unset($_SESSION['user_name']);
+
 
 $_SESSION['admin_id'] = $admin['id'];
 $_SESSION['admin_name'] = $admin['username'];
@@ -19,8 +17,7 @@ $_SESSION['is_admin'] = true;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login Page</title>
-    <link rel="stylesheet" href="styles.css"
-    
+    <link rel="stylesheet" href="styles.css">
 
 
 </head>
@@ -38,16 +35,23 @@ $_SESSION['is_admin'] = true;
           <nav class="nav-desktop">
             <a href="index2.php" class="nav-link  ">Home</a>
             <a href="products2.php" class="nav-link ">Products</a>
-            <a href="../Project01/User/login_land.php" class="nav-link">Login</a>
+             <?php
+session_start(); // only if not already started
+$isLoggedIn = isset($_SESSION['user_id']);
+$targetPage = $isLoggedIn ? '../Project01/wallet_dashboard.php' : '../Project01/User/login_land.php';
+?>
+<a href="<?= $targetPage ?>" class="nav-link"><?= $isLoggedIn ? 'My Wallet' : 'Login' ?></a>
             <a href="login.php" class="nav-link active">Admin</a>
             <a href ="#" class = 'nav-link'> <?php
               session_start();
-              if (isset($_SESSION['user'])) {
-                echo "Welcome, " . htmlspecialchars($_SESSION['user']['name']);
-                
+             if (isset($_SESSION['user_id'])) {
+                  echo "Welcome, " . htmlspecialchars($_SESSION['user_name']);
+              } elseif (isset($_SESSION['is_admin']) && $_SESSION['is_admin']) {
+                  echo "Admin: " . htmlspecialchars($_SESSION['admin_name']);
               } else {
-                echo "Guest";
-              } 
+                   echo "Guest";
+}
+
               ?></a>
               <a href="cart.php" class="nav-link">Cart</a>
             <a href ="#" class = 'nav-link'> 
