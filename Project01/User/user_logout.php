@@ -3,7 +3,7 @@
 session_start();
 unset($_SESSION['user_id']);
 unset($_SESSION['user_name']);
-header("Location: ../main/index2.php");
+header("Location: ../index2.php");
 exit;
 
 
@@ -58,7 +58,7 @@ exit;
   <div class="auth-container">
     <h2 >Logged Out</h2>
     <p class="logout-message">You have been successfully logged out.</p>
-    <a href="user_fixed_login.php" class="auth-btn">Login Again</a>
+    <a href="user_login.php" class="auth-btn">Login Again</a>
   </div>
 
 </body>
