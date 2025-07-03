@@ -56,16 +56,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <nav class="nav-desktop">
             <a href="index2.php" class="nav-link ">Home</a>
             <a href="products2.php" class="nav-link ">Products</a>
-            <a href="../Project01/User/login_land.php" class="nav-link">Login</a>
+             <?php
+session_start(); // only if not already started
+$isLoggedIn = isset($_SESSION['user_id']);
+$targetPage = $isLoggedIn ? '../Project01/wallet_dashboard.php' : '../Project01/User/login_land.php';
+?>
+<a href="<?= $targetPage ?>" class="nav-link"><?= $isLoggedIn ? 'My Wallet' : 'Login' ?></a>
             <a href="login.php" class="nav-link">Admin</a>
             <a href ="#" class = 'nav-link'> <?php
               session_start();
-              if (isset($_SESSION['user'])) {
-                echo "Welcome, " . htmlspecialchars($_SESSION['user']['name']);
-                
+             if (isset($_SESSION['user_id'])) {
+                  echo "Welcome, " . htmlspecialchars($_SESSION['user_name']);
+              } elseif (isset($_SESSION['is_admin']) && $_SESSION['is_admin']) {
+                  echo "Admin: " . htmlspecialchars($_SESSION['admin_name']);
               } else {
-                echo "Guest";
-              } 
+                   echo "Guest";
+}
+
               ?></a>
               <a href="cart.php" class="nav-link active">Cart</a>
             <a href ="#" class = 'nav-link'> 
