@@ -8,7 +8,7 @@
   
 </head>
 <body>
-  
+  <!-- Header  -->
   <header class="header">
     <div class="top-bar">Free shipping on orders over ₹999 • 30-day returns • Warranty included</div>
     <div class="header-main">
@@ -55,7 +55,7 @@
     <button onclick="location.href='user_registration.php'" class="btn btn-primary">Register</button>
 
     <p class="prompt">Already have an account?</p>
-    <button onclick="location.href='user_fixed_login.php'" class="btn btn-primary" >Login</button>
+    <button onclick="location.href='user_login.php'" class="btn btn-primary" >Login</button>
   </div>
 
 </body>
