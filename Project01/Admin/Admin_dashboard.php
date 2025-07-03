@@ -28,6 +28,8 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
         <a href="Admin_dashboard.php" class="active">Dashboard</a> <br> <br>
         <a href="caraousel.php">Manage Caraousel</a> <br> <br>
         <a href="admin_product.php">Manage Products</a> <br> <br>
+        <a href="admin_add_funds.php">Manage Funds</a> <br> <br>
+        <a href="admin_ledger.php">View Ledger</a> <br> <br>
         <a href="#"> 
           <?php
 if (session_status() === PHP_SESSION_NONE) {
@@ -40,7 +42,7 @@ if (isset($_SESSION['is_admin']) && !empty($_SESSION['admin_name'])) {
     echo "Access denied or invalid ";
 }
 ?></a> <br> <br>
-        <a href="/Internship/Project01/index2.php ">Logout</a>
+        <a href="admin_logout.php ">Logout</a>
         
  
 
