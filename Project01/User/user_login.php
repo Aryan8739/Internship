@@ -1,5 +1,5 @@
 <?php
-include_once '../conn.php';  // adjust path if needed
+include_once '../conn.php';
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
@@ -14,42 +14,43 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $user = $res->fetch_assoc();
 
     if ($user && password_verify($pass, $user['password'])) {
-        // ✅ Set session for logged-in user
-         // Clean any old admin session if switching to user
-        
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['user_name'] = $user['name']; // optional
+        // ✅ Clear old admin session if present
+        unset($_SESSION['admin_id']);
+        unset($_SESSION['admin_name']);
+        unset($_SESSION['is_admin']);
 
-        // ✅ Redirect to user orders or dashboard
+        // ✅ Set user session
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_name'] = $user['name'];
+
+        // ✅ Create wallet if not exists
+        $user_id = $user['id'];
+        $walletCheck = $conn->query("SELECT * FROM wallets WHERE user_id = $user_id");
+        if ($walletCheck->num_rows == 0) {
+            $conn->query("INSERT INTO wallets (user_id, balance) VALUES ($user_id, 0.00)");
+        }
+
+        // ✅ Redirect to user dashboard/home
         header("Location: ../index2.php");
         exit;
     } else {
         // ❌ Invalid login
         echo "<script>alert('Invalid email or password.'); window.location.href = 'user_login.html';</script>";
         exit;
- 
-     }
-unset($_SESSION['admin_id']);
-unset($_SESSION['admin_name']);
-unset($_SESSION['is_admin']);     
-$_SESSION['user_id'] = $user['id'];
-$_SESSION['user_name'] = $user['name']; // ✅ NOT $_SESSION['user']
-
+    }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>User Login</title>
 </head>
 <body>
-  <form action="user_fixed_login.php" method="POST">
-  <input type="email" name="email" placeholder="Email" required><br>
-  <input type="password" name="password" placeholder="Password" required><br>
-  <button type="submit">Login</button>
-</form>
-
+  <form action="user_login.php" method="POST">
+    <input type="email" name="email" placeholder="Email" required><br><br>
+    <input type="password" name="password" placeholder="Password" required><br><br>
+    <button type="submit">Login</button>
+  </form>
 </body>
 </html>
