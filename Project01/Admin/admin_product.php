@@ -34,7 +34,7 @@ include '../conn.php';
 <body>
   <div class="container">
     <h1>All Products</h1>
-    <a href="add_product.php" class="btn btn-primary">+ Add Product</a> <br> <br>
+    <a href="../add_product.php" class="btn btn-primary">+ Add Product</a> <br> <br>
     <a href="Admin_dashboard.php" class="btn btn-primary">Back to Dashboard</a>
 
     <table>
